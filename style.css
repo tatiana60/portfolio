@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+html body {
+  margin: 0;
+  height: 100%;
+}
+
+html body section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html body section > div {
+  position: relative;
+}
+
+html body section .bloc-gauche {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 25%;
+  height: 100vh;
+  background-image: url(./img/tatiana.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: opacity 1s, -webkit-filter 1s;
+  transition: opacity 1s, -webkit-filter 1s;
+  transition: filter 1s, opacity 1s;
+  transition: filter 1s, opacity 1s, -webkit-filter 1s;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-gauche {
+    display: none;
+  }
+}
+
+html body section .bloc-droit {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  z-index: 100;
+  width: 75%;
+  background-color: #FFFFFF;
+  color: #1404f2;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-droit {
+    width: 100%;
+  }
+}
+
+html body section .bloc-droit h1 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(90deg) translateX(-50%);
+          transform: rotate(90deg) translateX(-50%);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-size: 150px;
+  left: 120px;
+  margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-droit h1 {
+    position: initial;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+html body section .bloc-droit > p {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(90deg) translateX(-50%);
+          transform: rotate(90deg) translateX(-50%);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  font-size: 20px;
+  left: -60px;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-droit > p {
+    position: initial;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    text-align: center;
+    margin: 0;
+    opacity: 1;
+    font-weight: 700;
+  }
+}
+
+html body section .bloc-droit ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+  margin: 25px 10px 25px 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-droit ul {
+    gap: 15px;
+    padding: 0;
+  }
+}
+
+html body section .bloc-droit li {
+  list-style: none;
+}
+
+html body section .bloc-droit a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-droit a {
+    font-weight: 700;
+  }
+}
+
+html body section .bloc-droit .active {
+  color: #1404f2;
+}
+
+html body section .bloc-droit a:hover {
+  border-bottom: 4px solid #1404f2;
+}
+
+html body section .bloc-droit .Scroll {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow: hidden;
+  height: 275px;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 1000px) {
+  html body section .bloc-droit .Scroll {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  html body section .bloc-droit .Scroll {
+    margin-top: 0px;
+  }
+}
+
+html body section .bloc-droit .Scroll .Scroll__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes scrollText {
+  0% {
+    -webkit-transform: translate3d(0, 0, 2px);
+            transform: translate3d(0, 0, 2px);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 2px);
+            transform: translate3d(-50%, 0, 2px);
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    -webkit-transform: translate3d(0, 0, 2px);
+            transform: translate3d(0, 0, 2px);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 2px);
+            transform: translate3d(-50%, 0, 2px);
+  }
+}
+
+html body section .bloc-droit .Scroll .Scroll__wrapper .Scroll__move {
+  -webkit-animation: scrollText 15s infinite linear;
+          animation: scrollText 15s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: transform;
+}
+
+html body section .bloc-droit .Scroll .Scroll__wrapper .Scroll__move img {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+html body section .bloc-droit .Scroll .Scroll__wrapper .Scroll__move > div {
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+html body section .bloc-droit .Scroll .Scroll__wrapper .Scroll__move--reversed {
+  animation: scrollText 15s infinite linear reverse;
+}
+
+html body section .bloc-droit:hover {
+  width: 160%;
+}
+
+html body section .bloc-droit:hover p {
+  opacity: 1;
+}
+
+html body section .bloc-droit:hover + .bloc-gauche {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  opacity: 0.4;
+}
+
+html body .contact .bloc-gauche {
+  background-image: url(./img/daniele-fond.jpg);
+}
+
+html body .contact .bloc-droit form {
+  color: #000000;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 85%;
+}
+
+@media screen and (max-width: 1000px) {
+  html body .contact .bloc-droit form {
+    height: 60%;
+  }
+}
+
+html body .contact .bloc-droit form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 25px;
+  width: 60%;
+}
+
+html body .contact .bloc-droit form div label {
+  display: inherit;
+  padding-bottom: 15px;
+}
+
+html body .contact .bloc-droit form div input, html body .contact .bloc-droit form div textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #000000;
+}
+
+html body .contact .bloc-droit form div textarea {
+  height: 150px;
+  resize: none;
+}
+
+html body .contact .bloc-droit form div input:focus-visible, html body .contact .bloc-droit form div textarea:focus-visible {
+  border: none;
+}
+
+html body .contact .bloc-droit form button {
+  background-color: #1404f2;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 50px;
+  padding: 10px 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+html body .contact .bloc-droit form button:hover {
+  background-color: #000000;
+  font-weight: 700;
+}
+
+html body .profil .bloc-droit h2 {
+  font-size: 35px;
+  padding-top: 25px;
+}
+
+html body .profil .bloc-droit .bloc-text > p, html body .profil .bloc-droit .bloc-text h2 {
+  color: #000000;
+  width: 80%;
+  margin: 25px auto 15px auto;
+  line-height: 35px;
+}
+
+html body .profil .bloc-droit .bloc-text .avant {
+  background-color: #1404f2;
+  color: #FFFFFF;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
+html body .profil .bloc-droit .bloc-text .bloc-profil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  html body .profil .bloc-droit .bloc-text .bloc-profil .bloc-competence div {
+    width: 100%;
+  }
+}
+
+html body .profil .bloc-droit .bloc-text .bloc-profil .bloc-competence div h3 {
+  text-transform: uppercase;
+}
+
+html body .profil .bloc-droit .bloc-text .bloc-profil .bloc-competence div p {
+  font-weight: lighter;
+}
+
+html body .profil .bloc-droit .Scroll {
+  padding: 15px 0px;
+  height: 65px;
+}
+
+html body .profil .bloc-droit .Scroll .Scroll__wrapper .Scroll__move img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+html body .projet .bloc-gauche {
+  background-image: url(./img/daniele-fond.jpg);
+  height: auto;
+}
+
+html body .projet .bloc-droit h1, html body .projet .bloc-droit p {
+  top: 23%;
+}
+
+html body .projet .bloc-droit .bloc-projet {
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+  html body .projet .bloc-droit .bloc-projet {
+    margin-left: 10px;
+    text-align: center;
+  }
+}
+
+html body .projet .bloc-droit .bloc-projet h2 {
+  text-transform: uppercase;
+}
+
+html body .projet .bloc-droit .bloc-projet img {
+  width: 300px;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple {
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple .texte-original {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple .texte-hover {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple .texte-normal {
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple img {
+  border-radius: 15px;
+  opacity: 1;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple a {
+  color: #1404f2;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple:hover .texte-normal {
+  opacity: 0;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple:hover .texte-hover {
+  opacity: 1;
+}
+
+html body .projet .bloc-droit .bloc-projet .superposition-simple:hover img {
+  opacity: 0.2;
+}
+
+html footer {
+  padding: 15px;
+  color: #FFFFFF;
+  background-color: #000000;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

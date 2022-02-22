@@ -1,0 +1,360 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html{
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    body {
+    margin: 0;
+    height: 100%;
+        section{
+            display: flex;
+            > div{
+                position: relative;
+            }
+            .bloc-gauche{
+                order: 1;
+                width: 25%;
+                height: 100vh;
+                background-image: url(./img/tatiana.jpg);
+                background-size: cover;
+                background-position: center;
+                transition: filter 1s, opacity 1s;
+                @media screen and (max-width: $small) {
+                    display: none;
+                }
+            }
+            .bloc-droit{
+                order: 2;
+                z-index: 100;
+                width: 75%;
+                background-color: $clair;
+                color: $primary;
+                transition: width 1s;
+                @media screen and (max-width: $small) {
+                    width: 100%;
+                }
+                h1{
+                    position: absolute;
+                    top: 50%;
+                    transform-origin: top left;
+                    transform: rotate(90deg) translateX(-50%);
+                    backface-visibility: hidden;
+                    font-size: 150px;
+                    left: 120px;
+                    margin: 0;
+                    @media screen and (max-width: $small) {
+                        position: initial;
+                        transform: rotate(0deg);
+                        font-size: 50px;
+                        font-weight: 700;
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+                >p{
+                    position: absolute;
+                    opacity: 0;
+                    top: 50%;
+                    transform-origin: top left;
+                    transform: rotate(90deg) translateX(-50%);
+                    backface-visibility: hidden;
+                    transition: opacity 1s;
+                    font-size: 20px;
+                    left: -60px;
+                    @media screen and (max-width: $small) {
+                        position: initial;
+                        transform: rotate(0deg);
+                        text-align: center;
+                        margin: 0;
+                        opacity: 1;
+                        font-weight: 700;
+                    }
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 50px;
+                    margin: 25px 10px 25px 10px;
+                    @media screen and (max-width: $small) {
+                        gap: 15px;
+                        padding: 0;
+                    }
+                }
+                li{
+                    list-style:none;
+                }
+                
+                a{
+                    text-decoration: none;
+                    color: $fonce;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    @media screen and (max-width: $small) {
+                        font-weight: 700;
+                    }
+                }
+                .active {
+                    color: $primary;
+                }
+                a:hover{
+                    border-bottom: 4px solid $primary;
+                }
+                .Scroll{
+                    width: 80%;
+                    margin: 0 auto;
+                    margin-top: 3%;
+                    overflow: hidden;
+                    height: 275px;
+                    position: relative;
+                    background-color: $clair;
+                    @media screen and (max-width: $small) {
+                        width: 100%;
+                    }
+                    @media screen and (max-width: $medium) {
+                        margin-top: 0px;
+                    }
+                    .Scroll__wrapper{
+                        display: flex;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        align-items: center;
+                        justify-content: flex-start;
+                        width: 100%;
+                        height: 100%;
+                        @keyframes scrollText {
+                            0% {
+                                transform: translate3d(0, 0, 2px);
+                            }
+                
+                            100% {
+                                transform: translate3d(-50%, 0, 2px);
+                            }
+                        }
+                        .Scroll__move{
+                            animation: scrollText 15s infinite linear;
+                            display: flex;
+                            backface-visibility: hidden;
+                            will-change: transform;
+                            img{
+                                width: 250px;
+                                height: 250px;
+                                object-fit: cover;
+                                margin-right: 10px;
+                                border-radius: 15px;
+                            }
+                            > div{
+                                white-space: nowrap;
+                                display: flex;
+                                position: relative;
+                            }
+                        }
+                        .Scroll__move--reversed {
+                            animation: scrollText 15s infinite linear reverse;
+                        }
+                    }
+                }
+            }
+            .bloc-droit:hover{
+                width: 160%;
+            }
+            .bloc-droit:hover p{
+                opacity: 1;
+            }
+            .bloc-droit:hover + .bloc-gauche{
+                filter: blur(4px);
+                opacity: 0.4;
+            }
+        }
+        .contact{
+            .bloc-gauche{
+                background-image: url(./img/daniele-fond.jpg);
+            }
+            .bloc-droit{
+                form{
+                    color: $fonce;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 85%;
+                    @media screen and (max-width: $small) {
+                        height: 60%;
+                    }
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        padding-bottom: 25px;
+                        width: 60%;
+                        label{
+                            display: inherit;
+                            padding-bottom: 15px;
+                        }
+                        input, textarea{
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 2px solid $fonce;
+                        }
+                        textarea{
+                            height: 150px;
+                            resize: none;
+                        }
+                        input:focus-visible, textarea:focus-visible{
+                            border: none;
+                        }
+                    }
+                    button{
+                        background-color: $primary;
+                        border: none;
+                        color: $clair;
+                        border-radius: 50px;
+                        padding: 10px 50px;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 700;
+                    }
+                    button:hover{
+                        background-color: $fonce;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        .profil{
+            .bloc-droit{
+                h2{
+                    font-size: 35px;
+                    padding-top: 25px;
+                }
+                .bloc-text{
+                    >p, h2{
+                    color: $fonce;
+                    width: 80%;
+                    margin: 25px auto 15px auto;
+                    line-height: 35px;
+                    }
+                    .avant{
+                        background-color: $primary;
+                        color: $clair;
+                        padding: 5px 15px;
+                        border-radius: 15px;
+                    }
+                    .bloc-profil{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        text-align: center;
+                        padding:10px;
+                        .bloc-competence{
+                            div{
+                                @media screen and (max-width: $small) {
+                                    width: 100%;
+                                }
+                                h3{
+                                    text-transform: uppercase;
+                                }
+                                p{
+                                    font-weight: lighter;
+                                }
+                            }
+                        }
+                    }
+                }
+                .Scroll{
+                    padding: 15px 0px;
+                    height: 65px;
+                    .Scroll__wrapper{
+                        .Scroll__move{
+                            img{
+                                width: 60px;
+                                height: 60px;
+                                object-fit: cover;
+                                margin-right: 10px;
+                                border-radius: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .projet{
+            .bloc-gauche{
+                background-image: url(./img/daniele-fond.jpg);
+                height: auto;
+            }
+            .bloc-droit{
+                h1, p{
+                    top: 23%;
+                }
+                .bloc-projet{
+                    margin-left: 10%;
+                    margin-bottom: 5%;
+                    @media screen and (max-width: $small) {
+                        margin-left: 10px;
+                        text-align: center;
+                    }
+                    h2{
+                        text-transform: uppercase;
+                    }
+                    img{
+                        width: 300px;
+                    }
+                    .superposition-simple{
+                        width: 300px;
+                        height: 300px;
+                        padding: 15px;
+                        position: relative;
+                        display: inline-block;
+                        .texte-original{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .texte-hover{
+                            position: absolute;
+                            text-align: center;
+                            top: 50%;
+                            left: 50%;
+                            text-transform: uppercase;
+                            opacity: 0;
+                            transition: .5s ease;
+                        }
+                        .texte-normal{
+                            transition: .5s ease;
+                        }
+                        img{
+                            border-radius: 15px;
+                            opacity: 1;
+                            transition: .5s ease;
+                        }
+                        a{
+                            color:$primary;
+                        }
+                    }
+                    .superposition-simple:hover .texte-normal{
+                        opacity: 0;
+                    }
+                    .superposition-simple:hover .texte-hover{
+                        opacity: 1;
+                    }
+                    .superposition-simple:hover img{
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        padding: 15px;
+        color:$clair;
+        background-color:$fonce;
+        text-align: center;
+    }
+}
